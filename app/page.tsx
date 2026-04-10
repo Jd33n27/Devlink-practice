@@ -5,7 +5,7 @@ import { Cta } from "@/devlink/Cta";
 
 export default function Home() {
   return (
-    <main className="flex flex-col w-full">
+    <main>
       <HeroSection />
       <TrustedBy />
       <Features />

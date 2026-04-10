@@ -1,19 +1,64 @@
 @import "tailwindcss";
 
-@import "../devlink/global.css";
+/**
+ * TAILWIND 4 CASCADE FIX
+ *
+ * We must ensure that Webflow's CSS (which relies on classes like .w-button)
+ * wins over Tailwind's "Preflight" (resets) and other base styles.
+ *
+ * In Tailwind 4, we use @layer to define explicit priority.
+ */
+@layer base, devlink, utilities;
 
-.body {
-    display: block;
-    flex-flow: column;
+@layer devlink {
+    /*
+     Importing the global webflow styles into the devlink layer.
+     This gives them higher priority than 'base' (Preflight)
+     but lower than 'utilities' (your custom tailwind classes).
+  */
+    @import "../devlink/global.css";
+}
+
+/*
+   LAYOUT FIX
+   Next.js often puts CSS Modules AFTER global CSS.
+   If your component styles are still being overridden by something in global.css,
+   we can use the body.body selector to force high specificity for layout.
+*/
+body.body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     color: rgb(0, 0, 0);
     font-size: 16px;
     line-height: 1.4;
 }
 
 @media screen and (max-width: 479px) {
-    .body {
+    body.body {
         overflow-y: auto;
     }
 }
 
-@layer base, components, utilities, devlink;
+/*
+  FORCE FIX FOR COMMON WEBFLOW OVERRIDES
+  If standard Webflow classes are still losing, we can boost them here.
+*/
+@layer devlink {
+    .w-button {
+        display: inline-block !important;
+        border-style: solid;
+    }
+    .w-nav {
+        display: block !important;
+    }
+    /* Webflow components often lack the margin: auto needed for centering in Next.js */
+    .container,
+    [class*="container"],
+    .w-layout-blockcontainer {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}

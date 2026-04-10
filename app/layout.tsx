@@ -4,8 +4,6 @@ import { Footer } from "@/devlink/Footer";
 import { DevLinkProvider } from "../devlink/DevLinkProvider";
 import { Navbar } from "@/devlink/Navbar";
 
-// Webflow DevLink Styles
-import "../devlink/global.css";
 // Custom Project Styles
 import "./globals.css";
 
@@ -27,7 +25,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${dm_sans.className} body`}>
+      <body
+        className={`${dm_sans.className} body flex flex-col items-center w-full`}
+      >
         <DevLinkProvider>
           <Navbar />
           {children}
