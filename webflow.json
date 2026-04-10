@@ -2,6 +2,7 @@
   "devlink": {
     "host": "https://api.webflow.com",
     "rootDir": "./devlink",
+    "skipTagSelectors": true,
     "cssModules": true,
     "relativeHrefRoot": "/"
   },

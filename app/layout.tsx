@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { DM_Sans } from "next/font/google";
 import { Footer } from "@/devlink/Footer";
 import { DevLinkProvider } from "../devlink/DevLinkProvider";
 import { Navbar } from "@/devlink/Navbar";
@@ -7,7 +9,13 @@ import "../devlink/global.css";
 // Custom Project Styles
 import "./globals.css";
 
-export const metadata = {
+const dm_sans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "optional",
+});
+
+export const metadata: Metadata = {
   title: "My DevLink App",
   description: "Built with Next.js and Webflow DevLink",
 };
@@ -19,13 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=DM+Sans:300,400,500,600,700&subset=latin"
-        />
-      </head>
-      <body className="body">
+      <body className={`${dm_sans.className} body`}>
         <DevLinkProvider>
           <Navbar />
           {children}

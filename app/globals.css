@@ -1,17 +1,19 @@
 @import "tailwindcss";
 
-@layer components {
-    .body {
-        display: block;
-        flex-flow: column;
-        color: rgb(0, 0, 0);
-        font-size: 16px;
-        line-height: 1.4;
-    }
+@import "../devlink/global.css";
 
-    @media screen and (max-width: 479px) {
-        .body {
-            overflow-y: auto;
-        }
+.body {
+    display: block;
+    flex-flow: column;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+@media screen and (max-width: 479px) {
+    .body {
+        overflow-y: auto;
     }
 }
+
+@layer base, components, utilities, devlink;
