@@ -49,7 +49,7 @@ export function Navbar({ as: _Component = NavbarWrapper }) {
           <NavbarLink
             className={_utils.cx(_styles, "nav-link")}
             options={{
-              href: "#21d0715b-d3d7-2443-4a09-c91299a14e1d",
+              href: "#b2ae854b-35d9-4744-e107-03ff7fd278e4",
             }}
           >
             {"Features"}
@@ -57,7 +57,7 @@ export function Navbar({ as: _Component = NavbarWrapper }) {
           <NavbarLink
             className={_utils.cx(_styles, "nav-link")}
             options={{
-              href: "#4b4496d3-5827-9508-a267-14384365f409",
+              href: "#47ed19e9-a82e-d67d-1de8-b7bd1f5b8382",
             }}
           >
             {"Request a demo"}
@@ -65,8 +65,7 @@ export function Navbar({ as: _Component = NavbarWrapper }) {
           <NavbarLink
             className={_utils.cx(_styles, "nav-link", "cta")}
             options={{
-              href: "#",
-              preload: "none",
+              href: "mailto:jd33n27@gmail.com?subject=Re%3A%20test",
             }}
           >
             {"Sign up for the waitlist"}

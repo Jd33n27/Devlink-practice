@@ -1,19 +1,17 @@
-@import url("https://fonts.googleapis.com/css?family=DM+Sans:300,400,500,600,700&subset=latin");
-
 @import "tailwindcss";
 
-@import "../devlink/global.css";
-
-.body {
-    display: block;
-    flex-flow: column;
-    color: rgb(0, 0, 0);
-    font-size: 16px;
-    line-height: 1.4;
-}
-
-@media screen and (max-width: 479px) {
+@layer components {
     .body {
-        overflow-y: auto;
+        display: block;
+        flex-flow: column;
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    @media screen and (max-width: 479px) {
+        .body {
+            overflow-y: auto;
+        }
     }
 }

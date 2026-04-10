@@ -46,7 +46,9 @@ export function HeroSection({
           block=""
           button={true}
           className={_utils.cx(_styles, "button")}
-          options={link}
+          options={{
+            href: "#47ed19e9-a82e-d67d-1de8-b7bd1f5b8382",
+          }}
         >
           {text2}
         </Link>
