@@ -1,15 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:300,400,500,600,700&subset=latin");
 
-@import "tailwindcss/theme";
-
-@import "tailwindcss/utilities";
+@import "tailwindcss";
 
 @import "../devlink/global.css";
 
 .body {
     display: block;
     flex-flow: column;
-    font-family: "DM Sans";
     color: rgb(0, 0, 0);
     font-size: 16px;
     line-height: 1.4;

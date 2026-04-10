@@ -5,11 +5,11 @@ import { Cta } from "@/devlink/Cta";
 
 export default function Home() {
   return (
-    <>
+    <main className="flex flex-col w-full">
       <HeroSection />
       <TrustedBy />
       <Features />
       <Cta />
-    </>
+    </main>
   );
 }
